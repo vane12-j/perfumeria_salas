@@ -1,31 +1,5 @@
 import Link from "next/link";
-
-const categories = [
-  {
-    name: "Perfumes",
-    subtitle: "Encuentra tu firma",
-    image:
-      "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?w=800&h=900&fit=crop",
-  },
-  {
-    name: "Cabello",
-    subtitle: "Cuidado y belleza",
-    image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=900&fit=crop",
-  },
-  {
-    name: "Skincare",
-    subtitle: "Cuida tu piel",
-    image:
-      "https://images.unsplash.com/photo-1556229010-aa3f7ff66e2c?w=800&h=900&fit=crop",
-  },
-  {
-    name: "Body Care",
-    subtitle: "Mímate todos los días",
-    image:
-      "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&h=900&fit=crop",
-  },
-];
+import { categories } from "@/data/categories";
 
 export default function Categories() {
   return (
@@ -44,8 +18,8 @@ export default function Categories() {
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {categories.map((category) => (
             <Link
-              key={category.name}
-              href="/catalogo"
+              key={category.id}
+              href={`/catalogo?categoria=${category.slug}`}
               className="group relative aspect-[4/5] overflow-hidden"
             >
               <img
