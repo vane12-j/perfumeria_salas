@@ -1,9 +1,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Clock3,
   Mail,
-  MapPin,
   MessageCircle,
   Phone,
 } from "lucide-react";
@@ -45,9 +43,9 @@ export default function ContactoPage() {
             </h2>
 
             <p className="mt-5 text-sm leading-7 text-[#766d64]">
-              Puedes comunicarte con nosotros para consultar sobre productos,
-              disponibilidad, pedidos o cualquier otra información de
-              Perfumería Salas.
+              Perfumería Salas es una tienda 100% virtual. Puedes comunicarte
+              con nosotros para consultar sobre productos, disponibilidad,
+              pedidos y entregas en Costa Rica.
             </p>
 
             <div className="mt-10 space-y-7">
@@ -63,7 +61,7 @@ export default function ContactoPage() {
                   </p>
 
                   <p className="mt-1 text-sm text-[#766d64]">
-                    Escríbenos para consultas rápidas.
+                    Consultas, pedidos y atención personalizada.
                   </p>
 
                   <span className="mt-2 inline-block text-xs text-[#a49b92]">
@@ -84,7 +82,7 @@ export default function ContactoPage() {
                   </p>
 
                   <p className="mt-1 text-sm text-[#766d64]">
-                    Atención y consultas.
+                    Atención y consultas sobre tus pedidos.
                   </p>
 
                   <span className="mt-2 inline-block text-xs text-[#a49b92]">
@@ -105,7 +103,7 @@ export default function ContactoPage() {
                   </p>
 
                   <p className="mt-1 text-sm text-[#766d64]">
-                    Escríbenos cuando quieras.
+                    Consultas, soporte e información sobre pedidos.
                   </p>
 
                   <span className="mt-2 inline-block text-xs text-[#a49b92]">
@@ -113,46 +111,19 @@ export default function ContactoPage() {
                   </span>
                 </div>
               </div>
-
-              {/* Location */}
-              <div className="flex gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#f1ece4] text-[#a28b68]">
-                  <MapPin size={18} strokeWidth={1.5} />
-                </div>
-
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#5a5248]">
-                    Ubicación
-                  </p>
-
-                  <p className="mt-1 text-sm text-[#766d64]">
-                    Información de ubicación.
-                  </p>
-
-                  <span className="mt-2 inline-block text-xs text-[#a49b92]">
-                    Dirección por configurar
-                  </span>
-                </div>
-              </div>
             </div>
 
-            {/* Hours */}
+            {/* Delivery information */}
             <div className="mt-10 border-t border-[#e5dfd6] pt-8">
-              <div className="flex gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#f1ece4] text-[#a28b68]">
-                  <Clock3 size={18} strokeWidth={1.5} />
-                </div>
+              <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#5a5248]">
+                Pedidos y entregas
+              </p>
 
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#5a5248]">
-                    Horario de atención
-                  </p>
-
-                  <p className="mt-2 text-sm leading-6 text-[#766d64]">
-                    Horario por confirmar con el propietario de la tienda.
-                  </p>
-                </div>
-              </div>
+              <p className="mt-3 text-sm leading-6 text-[#766d64]">
+                Consulta la disponibilidad de cada producto y recibe
+                información sobre las opciones de entrega al realizar tu
+                pedido.
+              </p>
             </div>
           </div>
 
@@ -227,12 +198,26 @@ export default function ContactoPage() {
                   <option value="" disabled>
                     Selecciona una opción
                   </option>
-                  <option value="producto">Consulta sobre un producto</option>
+
+                  <option value="producto">
+                    Consulta sobre un producto
+                  </option>
+
                   <option value="disponibilidad">
                     Consulta de disponibilidad
                   </option>
-                  <option value="pedido">Consulta sobre un pedido</option>
-                  <option value="otro">Otro</option>
+
+                  <option value="pedido">
+                    Consulta sobre un pedido
+                  </option>
+
+                  <option value="entrega">
+                    Consulta sobre entregas
+                  </option>
+
+                  <option value="otro">
+                    Otro
+                  </option>
                 </select>
               </div>
 
