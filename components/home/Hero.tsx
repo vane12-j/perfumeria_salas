@@ -1,136 +1,95 @@
-"use client";
-
 import Link from "next/link";
-import { Heart, Menu, Search, ShoppingBag, User } from "lucide-react";
-import { useState } from "react";
 
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+export default function Hero() {
   return (
-    <header className="fixed left-0 right-0 top-0 z-50">
-      {/* Top bar */}
-      <div className="bg-[#1c1814] px-4 py-2 text-center">
-        <span className="text-[11px] tracking-[0.12em] text-[#c9a96e]">
-          Envíos a toda Costa Rica · Contacto: +506 8888-0000
-        </span>
-      </div>
+    <section className="relative overflow-hidden bg-[#f4efe7] pt-28 lg:pt-32">
+      <div className="mx-auto grid min-h-[calc(100vh-112px)] max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:px-8 lg:py-20">
+        {/* Text content */}
+        <div className="max-w-xl">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-[#a28b68]">
+            Perfumería Salas
+          </p>
 
-      {/* Main navbar */}
-      <nav className="border-b border-black/5 bg-[#faf8f4]/95 backdrop-blur-md">
-        <div className="mx-auto flex h-20 max-w-7xl items-center px-6 lg:px-8">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="font-serif text-xl font-bold tracking-tight text-[#1c1814]"
-          >
-            PERFUMERÍA{" "}
-            <span className="text-[#c9a96e]">SALAS</span>
-          </Link>
+          <h1 className="mt-5 font-serif text-5xl leading-[1.05] text-[#1c1814] sm:text-6xl lg:text-7xl">
+            Todo para tu
+            <span className="block italic text-[#a28b68]">
+              ritual de belleza
+            </span>
+          </h1>
 
-          {/* Desktop navigation */}
-          <div className="ml-12 hidden items-center gap-8 md:flex">
-            <Link
-              href="/"
-              className="text-sm text-[#1c1814] transition hover:text-[#c9a96e]"
-            >
-              Inicio
-            </Link>
+          <p className="mt-6 max-w-lg text-base leading-7 text-[#766d64]">
+            Descubre una selección especial de perfumes y fragancias para
+            encontrar ese aroma que se sienta verdaderamente tuyo.
+          </p>
 
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/catalogo"
-              className="text-sm text-[#5a5248] transition hover:text-[#1c1814]"
+              className="inline-flex items-center justify-center bg-[#1c1814] px-7 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-white transition hover:bg-[#c9a96e] hover:text-[#1c1814]"
             >
-              Catálogo
-            </Link>
-
-            <Link
-              href="/catalogo?categoria=perfumes"
-              className="text-sm text-[#5a5248] transition hover:text-[#1c1814]"
-            >
-              Perfumes
-            </Link>
-
-            <Link
-              href="/catalogo?categoria=cabello"
-              className="text-sm text-[#5a5248] transition hover:text-[#1c1814]"
-            >
-              Cabello
-            </Link>
-
-            <Link
-              href="/catalogo?categoria=skincare"
-              className="text-sm text-[#5a5248] transition hover:text-[#1c1814]"
-            >
-              Skincare
+              Explorar catálogo
             </Link>
 
             <Link
               href="/promociones"
-              className="text-sm text-[#5a5248] transition hover:text-[#1c1814]"
+              className="inline-flex items-center justify-center border border-[#d8cfc3] bg-white/60 px-7 py-3.5 text-xs font-medium uppercase tracking-[0.15em] text-[#1c1814] transition hover:border-[#c9a96e] hover:bg-white"
             >
-              Promociones
+              Ver promociones
             </Link>
           </div>
 
-          {/* Actions */}
-          <div className="ml-auto flex items-center gap-1">
-            <button
-              className="hidden rounded-full p-3 transition hover:bg-black/5 sm:block"
-              aria-label="Buscar"
-            >
-              <Search size={18} strokeWidth={1.6} />
-            </button>
+          {/* Small benefits */}
+          <div className="mt-12 grid grid-cols-2 gap-6 border-t border-[#ded6cc] pt-6 sm:grid-cols-3">
+            <div>
+              <p className="font-serif text-lg text-[#1c1814]">Selección</p>
+              <p className="mt-1 text-xs leading-5 text-[#766d64]">
+                Fragancias cuidadosamente elegidas
+              </p>
+            </div>
 
-            <button
-              className="rounded-full p-3 transition hover:bg-black/5"
-              aria-label="Favoritos"
-            >
-              <Heart size={18} strokeWidth={1.6} />
-            </button>
+            <div>
+              <p className="font-serif text-lg text-[#1c1814]">Virtual</p>
+              <p className="mt-1 text-xs leading-5 text-[#766d64]">
+                Compra fácil desde donde estés
+              </p>
+            </div>
 
-            <button
-              className="rounded-full p-3 transition hover:bg-black/5"
-              aria-label="Solicitudes"
-            >
-              <ShoppingBag size={18} strokeWidth={1.6} />
-            </button>
-
-            <button
-              className="hidden rounded-full p-3 transition hover:bg-black/5 sm:block"
-              aria-label="Perfil"
-            >
-              <User size={18} strokeWidth={1.6} />
-            </button>
-
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="rounded-full p-3 transition hover:bg-black/5 md:hidden"
-              aria-label="Abrir menú"
-            >
-              <Menu size={20} strokeWidth={1.6} />
-            </button>
+            <div className="hidden sm:block">
+              <p className="font-serif text-lg text-[#1c1814]">Costa Rica</p>
+              <p className="mt-1 text-xs leading-5 text-[#766d64]">
+                Envíos a todo el país
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Mobile menu */}
-        {menuOpen && (
-          <div className="border-t border-black/5 px-6 pb-6 pt-3 md:hidden">
-            {["Inicio", "Catálogo", "Perfumes", "Cabello", "Skincare", "Promociones"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href="#"
-                  className="block border-b border-black/5 py-4 font-serif text-lg"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item}
-                </Link>
-              )
-            )}
+        {/* Visual */}
+        <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
+          <div className="relative aspect-[4/5] overflow-hidden bg-[#e9e0d4]">
+            <img
+              src="/images/products/janeiro.png"
+              alt="Perfume destacado de Perfumería Salas"
+              className="h-full w-full object-cover"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+
+            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+              <div className="bg-white/90 px-4 py-3 backdrop-blur-sm">
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#a28b68]">
+                  Destacado
+                </p>
+                <p className="mt-1 font-serif text-lg text-[#1c1814]">
+                  Sol de Janeiro
+                </p>
+              </div>
+            </div>
           </div>
-        )}
-      </nav>
-    </header>
+
+          {/* Decorative element */}
+          <div className="absolute -bottom-5 -left-5 -z-0 h-24 w-24 border border-[#c9a96e]/40" />
+        </div>
+      </div>
+    </section>
   );
 }
