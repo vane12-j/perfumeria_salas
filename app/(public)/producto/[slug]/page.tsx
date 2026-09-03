@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AddToCart from "@/components/product/AddToCart";
 import {
   ArrowLeft,
   Check,
@@ -187,49 +188,7 @@ export default async function ProductPage({
               </div>
             </div>
 
-            {/* Quantity */}
-            {!isSoldOut && (
-              <div className="mt-8">
-                <p className="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[#5a5248]">
-                  Cantidad
-                </p>
-
-                <div className="flex h-12 w-32 items-center border border-[#ddd5ca] bg-white">
-                  <button
-                    type="button"
-                    aria-label="Disminuir cantidad"
-                    className="flex h-full w-10 items-center justify-center text-[#766d64] transition hover:bg-[#f1ece4]"
-                  >
-                    <Minus size={15} strokeWidth={1.5} />
-                  </button>
-
-                  <span className="flex flex-1 items-center justify-center text-sm text-[#1c1814]">
-                    1
-                  </span>
-
-                  <button
-                    type="button"
-                    aria-label="Aumentar cantidad"
-                    className="flex h-full w-10 items-center justify-center text-[#766d64] transition hover:bg-[#f1ece4]"
-                  >
-                    <Plus size={15} strokeWidth={1.5} />
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* Add to cart */}
-            <button
-              type="button"
-              disabled={isSoldOut}
-              className="mt-5 flex h-14 w-full items-center justify-center gap-3 bg-[#1c1814] px-6 text-xs font-medium uppercase tracking-[0.15em] text-white transition hover:bg-[#c9a96e] hover:text-[#1c1814] disabled:cursor-not-allowed disabled:bg-[#d5d0ca] disabled:text-[#766d64]"
-            >
-              <ShoppingBag size={18} strokeWidth={1.5} />
-
-              {isSoldOut
-                ? "Producto agotado"
-                : "Agregar al carrito"}
-            </button>
+            <AddToCart product={product} />
 
             {/* Delivery */}
             <div className="mt-6 grid gap-3 border-t border-[#e5dfd6] pt-6 sm:grid-cols-2">
